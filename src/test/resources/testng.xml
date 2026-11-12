@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Java Practice Suite" verbose="1">
+    <test name="Selenium Topic Practice">
+        <classes>
+            <class name="basics.BrowserLaunchNavigationTest"/>
+            <class name="locators.LocatorStrategiesTest"/>
+            <class name="waits.ExplicitWaitTest"/>
+            <class name="webelements.WebElementInteractionsTest"/>
+            <class name="dropdowns.DropdownSelectionTest"/>
+        </classes>
+    </test>
+</suite>
