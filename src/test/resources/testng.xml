@@ -8,6 +8,10 @@
             <class name="waits.ExplicitWaitTest"/>
             <class name="webelements.WebElementInteractionsTest"/>
             <class name="dropdowns.DropdownSelectionTest"/>
+            <class name="alerts.JavaScriptAlertsTest"/>
+            <class name="frames.FramesTest"/>
+            <class name="windows.MultipleWindowsTest"/>
+            <class name="actions.ActionsClassTest"/>
         </classes>
     </test>
 </suite>
