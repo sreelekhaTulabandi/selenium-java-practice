@@ -29,7 +29,11 @@ src/test/java/
 ├── locators/     # Selenium By locator strategies
 ├── waits/        # Explicit waits and synchronization
 ├── webelements/  # Text, attributes, state, typing and checkboxes
-└── dropdowns/    # HTML select dropdowns
+├── dropdowns/    # HTML select dropdowns
+├── alerts/       # JavaScript alert, confirm and prompt dialogs
+├── frames/       # Single and nested frame switching
+├── windows/      # Window handles and context switching
+└── actions/      # Mouse hover and context-click actions
 ```
 
 ## Topic tracker
@@ -67,6 +71,26 @@ src/test/java/
 - Try `selectByIndex` and `deselectAll` on a multi-select dropdown.
 - Explain why Selenium's `Select` class works only with native HTML `<select>` elements.
 - Add a negative assertion for the default selected option.
+
+### Topic 06 — JavaScript alerts
+- Accept an alert, dismiss a confirmation, and enter text in a prompt.
+- Explain why a JavaScript alert blocks normal DOM interaction until it is handled.
+- Add an assertion for the result message after each alert action.
+
+### Topic 07 — Frames
+- Switch into an iframe by locator, interact with its content, then return using `defaultContent()`.
+- Practice `parentFrame()` and explain the difference from `defaultContent()`.
+- Add a test for switching to a frame by index or name.
+
+### Topic 08 — Multiple windows
+- Capture the parent handle before clicking a link that opens a new window.
+- Switch to the child using the handle set, assert its title/content, close it, and return to the parent.
+- Explain why window-handle iteration should not assume a particular ordering.
+
+### Topic 09 — Actions class
+- Hover over the second and third profile cards and verify their captions.
+- Try `doubleClick()`, `clickAndHold()`, and `dragAndDrop()` on suitable pages.
+- Explain the difference between a WebElement's `click()` and an Actions sequence.
 
 ## Practice website
 
