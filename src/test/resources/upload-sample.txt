@@ -1,0 +1,2 @@
+Selenium Java practice upload fixture.
+This file is intentionally harmless test data.
