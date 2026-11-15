@@ -104,3 +104,28 @@ src/test/java/
 - Never commit credentials, tokens, or other secrets.
 
 This repository is for hands-on learning and SDET interview preparation.
+
+
+### Topic 10 — Web tables
+- Read table headers and assert the expected column count.
+- Iterate rows and locate a record using a business key such as last name.
+- Extract a cell from the matching row and validate its value.
+- Extend the example to sort, filter, or validate totals.
+
+### Topic 11 — Pagination
+- Verify the initial result range, move to the next page, and assert the range changes.
+- Navigate back and verify the original page state.
+- Add coverage for the last-page/disabled-next condition and changing page sizes.
+- Prefer waiting for a meaningful page-state change over fixed sleeps.
+
+### Topic 12 — Page Object Model
+- Keep page locators and UI actions inside the page class; keep business assertions in the test.
+- Add methods for logout and validation messages.
+- Discuss when a page method should return the same page object versus a different page object.
+- Keep page objects focused; avoid putting test assertions inside them.
+
+### Topic 13 — Shared framework setup
+- Extend `BaseTest` for consistent browser setup and teardown.
+- Run with the default Chrome browser: `mvn clean test`.
+- Try `mvn clean test -Dbrowser=chrome` and explain how a future Firefox implementation could be added to `DriverFactory`.
+- Discuss parallel execution and why a plain shared static WebDriver would be unsafe across TestNG threads.
