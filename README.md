@@ -45,10 +45,14 @@ src/test/java/
 | 03 | Explicit waits | WebDriverWait, visibility, clickable conditions | `waits/ExplicitWaitTest` | Added |
 | 04 | WebElement interactions | displayed, enabled, attributes, text, sendKeys, clear, selected | `webelements/WebElementInteractionsTest` | Added |
 | 05 | Dropdown selection | Select, selectByVisibleText, selectByValue, selected option | `dropdowns/DropdownSelectionTest` | Added |
-| 06 | Alerts, frames and windows | Alert API, frame switching, window handles | Planned |
-| 07 | Actions class | Mouse hover, right-click, drag-and-drop, keyboard | Planned |
-| 08 | Tables and lists | Read rows/cells, iterate and assert table data | Planned |
-| 09 | Page Object Model | Page classes, locators, reusable actions | Planned |
+| 06 | JavaScript alerts | Accept, dismiss, prompt text, alert wait | `alerts/JavaScriptAlertsTest` | Added |
+| 07 | Frames | Single/nested frames, frame waits, default content | `frames/FramesTest` | Added |
+| 08 | Multiple windows | Window handles, switching, closing and returning | `windows/MultipleWindowsTest` | Added |
+| 09 | Actions class | Hover and context-click interactions | `actions/ActionsClassTest` | Added |
+| 10 | Web tables | Headers, rows, cells, find records by data | `tables/WebTablesTest` | Added |
+| 11 | Pagination | Next/previous page, state and result-range assertions | `pagination/PaginationTest` | Added |
+| 12 | Page Object Model | Encapsulated locators, page actions and behavior tests | `pages/LoginPage` / `LoginPageTest` | Added |
+| 13 | Framework foundation | Shared TestNG lifecycle and configurable driver factory | `base/BaseTest` / `DriverFactory` | Added |
 
 ## Practice exercises
 
