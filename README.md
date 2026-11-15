@@ -33,7 +33,11 @@ src/test/java/
 ├── alerts/       # JavaScript alert, confirm and prompt dialogs
 ├── frames/       # Single and nested frame switching
 ├── windows/      # Window handles and context switching
-└── actions/      # Mouse hover and context-click actions
+├── actions/      # Mouse hover and context-click actions
+├── filehandling/ # File upload and download workflows
+├── cookies/      # Browser cookie lifecycle
+├── shadowdom/    # Selenium 4 Shadow DOM access
+└── keyboard/     # Keyboard input and key chords
 ```
 
 ## Topic tracker
@@ -53,6 +57,10 @@ src/test/java/
 | 11 | Pagination | Next/previous page, state and result-range assertions | `pagination/PaginationTest` | Added |
 | 12 | Page Object Model | Encapsulated locators, page actions and behavior tests | `pages/LoginPage` / `LoginPageTest` | Added |
 | 13 | Framework foundation | Shared TestNG lifecycle and configurable driver factory | `base/BaseTest` / `DriverFactory` | Added |
+| 14 | File upload and download | Upload fixture, configure download directory, verify completion | `filehandling/FileUploadDownloadTest` | Added |
+| 15 | Cookies | Add, inspect, delete and clear cookies | `cookies/CookieManagementTest` | Added |
+| 16 | Shadow DOM | Selenium 4 `getShadowRoot()` and nested element lookup | `shadowdom/ShadowDomTest` | Added |
+| 17 | Keyboard interactions | Special keys, modifier keys and key chords | `keyboard/KeyboardInteractionsTest` | Added |
 
 ## Practice exercises
 
@@ -133,3 +141,27 @@ This repository is for hands-on learning and SDET interview preparation.
 - Run with the default Chrome browser: `mvn clean test`.
 - Try `mvn clean test -Dbrowser=chrome` and explain how a future Firefox implementation could be added to `DriverFactory`.
 - Discuss parallel execution and why a plain shared static WebDriver would be unsafe across TestNG threads.
+
+
+### Topic 14 — File upload and download
+- Upload the bundled `upload-sample.txt` fixture through the file input.
+- Configure a dedicated download directory through Chrome preferences.
+- Wait until the expected file exists, has content, and its `.crdownload` temporary file disappears.
+- Extend the download test to validate the downloaded file's contents and handle a missing link gracefully.
+
+### Topic 15 — Cookies
+- Add a cookie with a name, value, path and HttpOnly flag.
+- Read it back with `getCookieNamed` and assert its attributes.
+- Delete one cookie, then compare `deleteCookieNamed` with `deleteAllCookies`.
+- Explain why cookies are scoped to the current domain and why secure cookies require HTTPS.
+
+### Topic 16 — Shadow DOM
+- Locate the custom-element host, call Selenium 4's `getShadowRoot()`, then locate an element inside the returned SearchContext.
+- Explain why ordinary document-level CSS/XPath searches do not pierce a shadow boundary.
+- Extend the test to handle a missing host and nested shadow roots.
+
+### Topic 17 — Keyboard interactions
+- Use `Keys.ENTER` and inspect the page's reported key.
+- Use Control+A to select an input value before replacing it.
+- Practise Shift, Tab, Escape and multi-key sequences with `Actions`.
+- Explain the difference between `WebElement.sendKeys` and `Actions` keyboard sequences.
