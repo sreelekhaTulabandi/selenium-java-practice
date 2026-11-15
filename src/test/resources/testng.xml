@@ -12,6 +12,9 @@
             <class name="frames.FramesTest"/>
             <class name="windows.MultipleWindowsTest"/>
             <class name="actions.ActionsClassTest"/>
+            <class name="tables.WebTablesTest"/>
+            <class name="pagination.PaginationTest"/>
+            <class name="pages.LoginPageTest"/>
         </classes>
     </test>
 </suite>
