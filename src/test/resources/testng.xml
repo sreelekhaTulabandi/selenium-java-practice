@@ -15,6 +15,10 @@
             <class name="tables.WebTablesTest"/>
             <class name="pagination.PaginationTest"/>
             <class name="pages.LoginPageTest"/>
+            <class name="filehandling.FileUploadDownloadTest"/>
+            <class name="cookies.CookieManagementTest"/>
+            <class name="shadowdom.ShadowDomTest"/>
+            <class name="keyboard.KeyboardInteractionsTest"/>
         </classes>
     </test>
 </suite>
