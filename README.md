@@ -19,6 +19,8 @@ A hands-on Selenium WebDriver practice repository using Java, Maven, and TestNG.
 mvn clean test
 ```
 
+The standard suite writes an Extent HTML report to `target/extent-reports/ExtentReport.html`. To run only the isolated parallel-browser exercise, use `mvn clean test -Dtestng.suite=src/test/resources/testng-parallel.xml`.
+
 Selenium Manager (included with Selenium 4.6+) can manage a compatible browser driver automatically in supported environments.
 
 ## Project structure
@@ -37,7 +39,11 @@ src/test/java/
 ├── filehandling/ # File upload and download workflows
 ├── cookies/      # Browser cookie lifecycle
 ├── shadowdom/    # Selenium 4 Shadow DOM access
-└── keyboard/     # Keyboard input and key chords
+├── keyboard/     # Keyboard input and key chords
+├── api/          # REST API checks using Rest Assured
+├── dataproviders/ # Data-driven TestNG examples
+├── parallel/     # Thread-isolated browser tests
+└── listeners/    # Extent HTML reporting
 ```
 
 ## Topic tracker
@@ -61,6 +67,10 @@ src/test/java/
 | 15 | Cookies | Add, inspect, delete and clear cookies | `cookies/CookieManagementTest` | Added |
 | 16 | Shadow DOM | Selenium 4 `getShadowRoot()` and nested element lookup | `shadowdom/ShadowDomTest` | Added |
 | 17 | Keyboard interactions | Special keys, modifier keys and key chords | `keyboard/KeyboardInteractionsTest` | Added |
+| 18 | REST API testing | GET/POST, status, content type and JSON body assertions | `api/PostsApiTest` | Added |
+| 19 | Data-driven testing | TestNG `@DataProvider`, multiple valid/invalid scenarios | `dataproviders/LoginDataProviderTest` | Added |
+| 20 | Parallel execution | ThreadLocal WebDriver and TestNG method parallelism | `parallel/ParallelBrowserTest` | Added |
+| 21 | Test reporting | TestNG listener and Extent Spark HTML report | `listeners/ExtentReportListener` | Added |
 
 ## Practice exercises
 
@@ -165,3 +175,28 @@ This repository is for hands-on learning and SDET interview preparation.
 - Use Control+A to select an input value before replacing it.
 - Practise Shift, Tab, Escape and multi-key sequences with `Actions`.
 - Explain the difference between `WebElement.sendKeys` and `Actions` keyboard sequences.
+
+
+### Topic 18 — REST API testing with Rest Assured
+- Send a GET request and validate status code, content type, and selected JSON fields.
+- Send a JSON POST request and assert the returned payload.
+- Extend coverage with query parameters, path parameters, headers, negative status codes, and schema validation.
+- Explain the difference between API-level checks and end-to-end UI tests.
+
+### Topic 19 — TestNG DataProviders
+- Supply multiple username/password/expected-message rows to one test method.
+- Add boundary cases and explain how TestNG reports each data set.
+- Move larger test data into JSON or CSV only when the data volume justifies it.
+- Keep assertions in the test and reusable UI operations in the page object.
+
+### Topic 20 — Parallel execution
+- Run the isolated suite with `mvn clean test -Dtestng.suite=src/test/resources/testng-parallel.xml`.
+- Observe that each test thread gets its own browser through `ThreadLocal<WebDriver>`.
+- Explain why a single static WebDriver causes cross-test interference.
+- Add a test that deliberately fails and confirm teardown still closes its browser.
+
+### Topic 21 — Extent reporting
+- Run the standard suite and open `target/extent-reports/ExtentReport.html`.
+- Identify passed, failed and skipped test entries.
+- Add exception details and a screenshot attachment for UI failures as an extension exercise.
+- Explain why the listener uses a thread-local current test when methods execute concurrently.
