@@ -9,18 +9,18 @@ public class LoginPageTest extends BaseTest {
 
     @Test
     public void shouldLoginWithValidCredentials() {
-        LoginPage loginPage = new LoginPage(driver).open();
+        LoginPage loginPage = new LoginPage(getDriver()).open();
         loginPage.enterUsername("tomsmith")
                 .enterPassword("SuperSecretPassword!")
                 .submit();
 
-        Assert.assertTrue(driver.getCurrentUrl().endsWith("/secure"));
+        Assert.assertTrue(getDriver().getCurrentUrl().endsWith("/secure"));
         Assert.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 
     @Test
     public void shouldShowErrorForInvalidCredentials() {
-        LoginPage loginPage = new LoginPage(driver).open();
+        LoginPage loginPage = new LoginPage(getDriver()).open();
         loginPage.enterUsername("wrong-user")
                 .enterPassword("wrong-password")
                 .submit();
