@@ -24,6 +24,10 @@
             <class name="keyboard.KeyboardInteractionsTest"/>
             <class name="api.PostsApiTest"/>
             <class name="dataproviders.LoginDataProviderTest"/>
+            <class name="browseroptions.BrowserOptionsTest"/>
+            <class name="screenshots.ScreenshotCaptureTest"/>
+            <class name="browserlogs.BrowserConsoleLogsTest"/>
+            <class name="webstorage.WebStorageTest"/>
         </classes>
     </test>
 </suite>
