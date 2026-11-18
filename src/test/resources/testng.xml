@@ -28,6 +28,10 @@
             <class name="screenshots.ScreenshotCaptureTest"/>
             <class name="browserlogs.BrowserConsoleLogsTest"/>
             <class name="webstorage.WebStorageTest"/>
+            <class name="browserconfig.PageLoadStrategyTest"/>
+            <class name="viewports.ResponsiveViewportTest"/>
+            <class name="navigation.BrowserNavigationHistoryTest"/>
+            <class name="performance.NavigationTimingTest"/>
         </classes>
     </test>
 </suite>
