@@ -19,7 +19,7 @@ A hands-on Selenium WebDriver practice repository using Java, Maven, and TestNG.
 mvn clean test
 ```
 
-The standard suite writes an Extent HTML report to `target/extent-reports/ExtentReport.html`. To run only the isolated parallel-browser exercise, use `mvn clean test -Dtestng.suite=src/test/resources/testng-parallel.xml`.
+The standard suite writes an Extent HTML report to `target/extent-reports/ExtentReport.html` and screenshots to `target/screenshots/` when screenshot tests run. Set `-Dheadless=true` to run Chrome headlessly or `-Dincognito=true` to launch an incognito session. To run only the isolated parallel-browser exercise, use `mvn clean test -Dtestng.suite=src/test/resources/testng-parallel.xml`.
 
 Selenium Manager (included with Selenium 4.6+) can manage a compatible browser driver automatically in supported environments.
 
@@ -71,6 +71,10 @@ src/test/java/
 | 19 | Data-driven testing | TestNG `@DataProvider`, multiple valid/invalid scenarios | `dataproviders/LoginDataProviderTest` | Added |
 | 20 | Parallel execution | ThreadLocal WebDriver and TestNG method parallelism | `parallel/ParallelBrowserTest` | Added |
 | 21 | Test reporting | TestNG listener and Extent Spark HTML report | `listeners/ExtentReportListener` | Added |
+| 22 | Browser options and capabilities | Headless/incognito launch flags and browser capabilities | `browseroptions/BrowserOptionsTest` | Added |
+| 23 | Screenshot capture | Reusable screenshot utility and PNG artifact validation | `screenshots/ScreenshotCaptureTest` | Added |
+| 24 | Browser console logs | Chrome browser log configuration and console assertions | `browserlogs/BrowserConsoleLogsTest` | Added |
+| 25 | Web Storage | JavaScript access to localStorage and sessionStorage | `webstorage/WebStorageTest` | Added |
 
 ## Practice exercises
 
@@ -200,3 +204,28 @@ This repository is for hands-on learning and SDET interview preparation.
 - Identify passed, failed and skipped test entries.
 - Add exception details and a screenshot attachment for UI failures as an extension exercise.
 - Explain why the listener uses a thread-local current test when methods execute concurrently.
+
+
+### Topic 22 — Browser options and capabilities
+- Run `mvn clean test -Dtestng.suite=src/test/resources/testng.xml -Dheadless=true` to exercise headless Chrome.
+- Try `-Dincognito=true` and compare behavior with a normal browser session.
+- Inspect `getCapabilities()` and explain the difference between browser name, browser version, and platform name.
+- Add a configurable argument for disabling browser notifications and test the default behavior.
+
+### Topic 23 — Screenshot capture
+- Run `ScreenshotCaptureTest` and inspect the PNG under `target/screenshots/`.
+- Capture screenshots for a second page and use a meaningful test-specific filename.
+- Extend the listener to attach screenshots to failed Extent report entries.
+- Explain when to capture a full-page screenshot versus a viewport screenshot.
+
+### Topic 24 — Browser console logs
+- Run the console log test and identify the custom marker in the browser log entries.
+- Add a test that intentionally emits a JavaScript warning and assert its message or level.
+- Explain why browser logging preferences must be enabled before creating the Chrome session.
+- Discuss why console logs are diagnostic evidence, not a replacement for functional assertions.
+
+### Topic 25 — Local and session storage
+- Store a key in localStorage and verify it remains after a page refresh.
+- Store a key in sessionStorage and clear it after reading.
+- Compare storage lifetime and scope with cookies.
+- Add cleanup in a `finally` block so practice data does not leak between tests.
