@@ -1,7 +1,6 @@
 package browserlogs;
 
 import base.BaseTest;
-import java.util.logging.Level;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.testng.Assert;
