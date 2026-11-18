@@ -233,8 +233,8 @@ This repository is for hands-on learning and SDET interview preparation.
 
 ### Topic 26 — Page-load strategies
 - Compare Selenium's `NORMAL`, `EAGER` and `NONE` strategies and when each readiness condition is appropriate.
-- Inspect the negotiated `pageLoadStrategy` capability on the created session.
-- Run the example with a deliberate strategy configuration and discuss why strategy changes do not replace explicit waits.
+- Run `mvn clean test -Dtest=PageLoadStrategyTest -DpageLoadStrategy=eager` or use `normal` / `none`.
+- Inspect the negotiated `pageLoadStrategy` capability and explain why strategy changes do not replace explicit waits.
 
 ### Topic 27 — Responsive viewport checks
 - Resize the browser to mobile and desktop dimensions and inspect `window.innerWidth`.
