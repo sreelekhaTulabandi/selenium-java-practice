@@ -229,3 +229,24 @@ This repository is for hands-on learning and SDET interview preparation.
 - Store a key in sessionStorage and clear it after reading.
 - Compare storage lifetime and scope with cookies.
 - Add cleanup in a `finally` block so practice data does not leak between tests.
+
+
+### Topic 26 — Page-load strategies
+- Compare Selenium's `NORMAL`, `EAGER` and `NONE` strategies and when each readiness condition is appropriate.
+- Inspect the negotiated `pageLoadStrategy` capability on the created session.
+- Run the example with a deliberate strategy configuration and discuss why strategy changes do not replace explicit waits.
+
+### Topic 27 — Responsive viewport checks
+- Resize the browser to mobile and desktop dimensions and inspect `window.innerWidth`.
+- Explain the difference between outer window dimensions and the page's CSS viewport.
+- Extend the test with breakpoint-specific assertions for a responsive application.
+
+### Topic 28 — Browser navigation history
+- Navigate from the home page to a second page, then use back and forward.
+- Synchronize on URL and page-specific elements rather than fixed sleeps.
+- Add refresh coverage and explain how redirects affect navigation history.
+
+### Topic 29 — Navigation timing and performance
+- Read the W3C Navigation Timing entry with `performance.getEntriesByType('navigation')`.
+- Inspect response end, DOMContentLoaded, load event and navigation duration.
+- Explain why timings are environment-dependent diagnostics and should not be asserted against brittle fixed thresholds.
