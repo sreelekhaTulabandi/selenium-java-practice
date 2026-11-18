@@ -1,6 +1,7 @@
 package base;
 
 import java.util.logging.Level;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,6 +19,14 @@ public final class DriverFactory {
         }
 
         ChromeOptions options = new ChromeOptions();
+        String pageLoadStrategy = System.getProperty("pageLoadStrategy", "normal")
+                .trim().toUpperCase();
+        try {
+            options.setPageLoadStrategy(PageLoadStrategy.valueOf(pageLoadStrategy));
+        } catch (IllegalArgumentException exception) {
+            throw new IllegalArgumentException("Unsupported pageLoadStrategy: " + pageLoadStrategy
+                    + ". Supported values: normal, eager, none", exception);
+        }
         if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
             options.addArguments("--headless=new", "--window-size=1440,900");
         }
