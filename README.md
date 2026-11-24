@@ -250,3 +250,24 @@ This repository is for hands-on learning and SDET interview preparation.
 - Read the W3C Navigation Timing entry with `performance.getEntriesByType('navigation')`.
 - Inspect response end, DOMContentLoaded, load event and navigation duration.
 - Explain why timings are environment-dependent diagnostics and should not be asserted against brittle fixed thresholds.
+
+
+### Topic 30 — Selenium 4 relative locators
+- Locate input elements below their labels and a submit button below the password field.
+- Practise `above`, `below`, `toLeftOf`, `toRightOf` and `near` with stable reference elements.
+- Explain why relative locators use rendered element geometry and can be sensitive to responsive layout changes.
+
+### Topic 31 — FluentWait
+- Configure an explicit timeout and polling interval, and ignore only expected transient exceptions.
+- Wait for delayed content on the dynamic loading example and assert its final text.
+- Compare FluentWait with WebDriverWait and explain why broad exception suppression hides real failures.
+
+### Topic 32 — Stale element recovery
+- Keep a WebElement reference, trigger a DOM replacement, and wait for the old reference to become stale.
+- Re-locate the element using its stable locator instead of repeatedly using the stale reference.
+- Explain the difference between StaleElementReferenceException and NoSuchElementException.
+
+### Topic 33 — Browser notification permissions
+- Configure Chrome's profile preference to block web notifications before creating the browser session.
+- Read `Notification.permission` from a page and assert that it is denied.
+- Try granting permission in an isolated profile and explain why browser permissions are configuration, not application UI state.
