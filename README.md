@@ -75,6 +75,14 @@ src/test/java/
 | 23 | Screenshot capture | Reusable screenshot utility and PNG artifact validation | `screenshots/ScreenshotCaptureTest` | Added |
 | 24 | Browser console logs | Chrome browser log configuration and console assertions | `browserlogs/BrowserConsoleLogsTest` | Added |
 | 25 | Web Storage | JavaScript access to localStorage and sessionStorage | `webstorage/WebStorageTest` | Added |
+| 26 | Page-load strategies | NORMAL, EAGER and NONE readiness behavior | `browserconfig/PageLoadStrategyTest` | Added |
+| 27 | Responsive viewports | Mobile and desktop viewport sizing | `viewports/ResponsiveViewportTest` | Added |
+| 28 | Browser navigation history | Back, forward, refresh and explicit synchronization | `navigation/BrowserNavigationHistoryTest` | Added |
+| 29 | Navigation timing | W3C Performance API navigation metrics | `performance/NavigationTimingTest` | Added |
+| 30 | Relative locators | Locate elements by spatial relationship | `relativelocators/RelativeLocatorsTest` | Added |
+| 31 | FluentWait | Custom polling, timeout and ignored exceptions | `fluentwait/FluentWaitTest` | Added |
+| 32 | Stale element recovery | Wait for stale references and reacquire DOM nodes | `staleelements/StaleElementRecoveryTest` | Added |
+| 33 | Browser permissions | Configure and verify Chrome notification permission | `permissions/NotificationPermissionTest` | Added |
 
 ## Practice exercises
 
