@@ -22,7 +22,7 @@ public class FluentWaitTest extends BaseTest {
                 .ignoring(NoSuchElementException.class);
 
         WebElement result = wait.until(driver -> {
-            WebElement element = driver.findElement(By.id(" finish"));
+            WebElement element = driver.findElement(By.id("finish"));
             return element.isDisplayed() ? element : null;
         });
 
