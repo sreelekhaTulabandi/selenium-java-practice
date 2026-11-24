@@ -32,6 +32,10 @@
             <class name="viewports.ResponsiveViewportTest"/>
             <class name="navigation.BrowserNavigationHistoryTest"/>
             <class name="performance.NavigationTimingTest"/>
+            <class name="relativelocators.RelativeLocatorsTest"/>
+            <class name="fluentwait.FluentWaitTest"/>
+            <class name="staleelements.StaleElementRecoveryTest"/>
+            <class name="permissions.NotificationPermissionTest"/>
         </classes>
     </test>
 </suite>
