@@ -83,6 +83,10 @@ src/test/java/
 | 31 | FluentWait | Custom polling, timeout and ignored exceptions | `fluentwait/FluentWaitTest` | Added |
 | 32 | Stale element recovery | Wait for stale references and reacquire DOM nodes | `staleelements/StaleElementRecoveryTest` | Added |
 | 33 | Browser permissions | Configure and verify Chrome notification permission | `permissions/NotificationPermissionTest` | Added |
+| 34 | Element screenshots | Capture and validate a single WebElement PNG | `elementscreenshot/ElementScreenshotTest` | Added |
+| 35 | DOM attributes and properties | Compare initial HTML attributes with live DOM properties | `domproperties/DomAttributePropertyTest` | Added |
+| 36 | Accessibility metadata | Inspect computed accessible names and ARIA roles | `accessibility/AccessibleNameRoleTest` | Added |
+| 37 | HTML5 form validation | Required fields, email validity and native validation messages | `htmlvalidation/Html5FormValidationTest` | Added |
 
 ## Practice exercises
 
@@ -279,3 +283,24 @@ This repository is for hands-on learning and SDET interview preparation.
 - Configure Chrome's profile preference to block web notifications before creating the browser session.
 - Read `Notification.permission` from a page and assert that it is denied.
 - Try granting permission in an isolated profile and explain why browser permissions are configuration, not application UI state.
+
+
+### Topic 34 — Element screenshots
+- Capture a specific form element using `WebElement.getScreenshotAs(OutputType.BYTES)`.
+- Save the bytes under `target/element-screenshots` and validate the PNG output.
+- Compare element screenshots with viewport screenshots and discuss when each is useful.
+
+### Topic 35 — DOM attributes versus properties
+- Read an input's initial `value` content attribute and live `value` DOM property.
+- Type into the field and compare `getDomAttribute` with `getDomProperty`.
+- Explain why an input's current value can change without changing its original HTML attribute.
+
+### Topic 36 — Accessible names and ARIA roles
+- Inspect `getAccessibleName()` and `getAriaRole()` for labelled form controls and buttons.
+- Compare the computed accessible name with visible text and associated labels.
+- Discuss how accessible metadata supports robust automation and accessibility-oriented checks, without replacing a full accessibility audit.
+
+### Topic 37 — HTML5 form validation
+- Create a required email field and check validity using `checkValidity()`.
+- Exercise empty, malformed and valid values and inspect the browser's native `validationMessage`.
+- Explain the difference between browser constraint validation and application-specific server-side validation.
