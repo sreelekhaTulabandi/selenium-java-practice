@@ -33,13 +33,16 @@ public class Html5FormValidationTest extends BaseTest {
                 "return document.getElementById('signup').checkValidity();"));
         Assert.assertFalse((Boolean) js.executeScript(
                 "return arguments[0].checkValidity();", email));
-        Assert.assertTrue(email.getAttribute("validationMessage").isEmpty()
-                || email.getAttribute("validationMessage") != null,
-                "The browser exposes a validation message property");
+        String requiredMessage = (String) js.executeScript(
+                "return arguments[0].validationMessage;", email);
+        Assert.assertFalse(requiredMessage.isBlank(),
+                "The browser should explain why the required field is invalid");
 
         email.sendKeys("not-an-email");
         Assert.assertFalse((Boolean) js.executeScript(
                 "return arguments[0].checkValidity();", email));
+        Assert.assertFalse(((String) js.executeScript(
+                "return arguments[0].validationMessage;", email)).isBlank());
 
         email.clear();
         email.sendKeys("qa@example.com");
