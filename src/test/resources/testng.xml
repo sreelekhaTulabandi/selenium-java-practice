@@ -36,6 +36,10 @@
             <class name="fluentwait.FluentWaitTest"/>
             <class name="staleelements.StaleElementRecoveryTest"/>
             <class name="permissions.NotificationPermissionTest"/>
+            <class name="elementscreenshot.ElementScreenshotTest"/>
+            <class name="domproperties.DomAttributePropertyTest"/>
+            <class name="accessibility.AccessibleNameRoleTest"/>
+            <class name="htmlvalidation.Html5FormValidationTest"/>
         </classes>
     </test>
 </suite>
